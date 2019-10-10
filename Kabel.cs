@@ -18,12 +18,24 @@ namespace Waterskibaan
 
         public void NeemLijnInGebruik(Lijn lijn)
         {
-            //
+            if (IsStartPositieLeeg())
+            {
+                lijn.PositieOpKabel = 0;
+                _lijnen.AddFirst(lijn);
+            }
         }
 
         public void VerschuifLijnen()
         {
-
+            foreach (Lijn lijn in _lijnen)
+            {
+                lijn.PositieOpKabel++;
+                if (lijn.PositieOpKabel == 10)
+                {
+                    lijn.PositieOpKabel = 0;
+                }
+//                _lijnen.
+            }
         }
 
         public Lijn VerwijderLijnVanKabel()
