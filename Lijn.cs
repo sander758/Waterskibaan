@@ -2,6 +2,6 @@
 {
     public class Lijn
     {
-        public int PositieOpKabel { get; set; }
+        public int PositieOpDeKabel { get; set; }
     }
 }
