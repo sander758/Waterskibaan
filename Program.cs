@@ -9,8 +9,8 @@ namespace Waterskibaan
         {
             Console.WriteLine("Hello World!");
 
-//            TestOpdracht2();
-            TestOpdracht3();
+            TestOpdracht2();
+//            TestOpdracht3();
         }
 
         private static void TestOpdracht2()

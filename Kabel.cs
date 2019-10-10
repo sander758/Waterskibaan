@@ -56,10 +56,8 @@ namespace Waterskibaan
                 // Verwijder de lijn uit de list
                 _lijnen.RemoveLast();
                 return lastLijn;
-            } else
-            {
-                return null;
             }
+            return null;
         }
 
         public override string ToString()

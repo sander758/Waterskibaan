@@ -9,9 +9,10 @@ namespace Waterskibaan
         public Zwemvest Zwemvest { get; set; }
         public Skies Skies { get; set; }
         public Color KledingKleur { get; set; }
-        public List<IMoves> Moves { get; set; }
+        public List<IMove> Moves { get; set; }
+        public int BehaaldePunten { get; set; }
 
-        public Sporter(List<IMoves> moves)
+        public Sporter(List<IMove> moves)
         {
             Moves = moves;
         }
