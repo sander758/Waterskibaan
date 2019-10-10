@@ -15,6 +15,7 @@ namespace Waterskibaan
         public Sporter(List<IMove> moves)
         {
             Moves = moves;
+            KledingKleur = Color.Aqua;
         }
     }
 }

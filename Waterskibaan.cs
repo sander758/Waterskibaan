@@ -1,4 +1,6 @@
-﻿namespace Waterskibaan
+﻿using System;
+
+namespace Waterskibaan
 {
     public class Waterskibaan
     {
@@ -17,6 +19,15 @@
         {
             _kabel.VerschuifLijnen();
             _lijnenVoorraad.LijnToevoegenAanRij(_kabel.VerwijderLijnVanKabel());
+        }
+
+        public void SporterStart(Sporter sporter)
+        {
+            Lijn lijn = _lijnenVoorraad.VerwijderEersteLijn();
+            lijn.Sporter = sporter;
+            Random r = new Random();
+            sporter.AantalRondenNogTeGaan = r.Next(1) + 1;
+            _kabel.NeemLijnInGebruik(lijn);
         }
 
         public override string ToString()
