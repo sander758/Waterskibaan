@@ -12,7 +12,8 @@ namespace Waterskibaan
 //            TestOpdracht2();
 //            TestOpdracht3();
 //            TestOpdracht8();
-            TestOpdracht10();
+//            TestOpdracht10();
+            TestOpdracht11();
         }
 
         private static void TestOpdracht2()
@@ -84,6 +85,12 @@ namespace Waterskibaan
                 groep.SporterNeemPlaatsInRij(new Sporter(MoveCollection.GetWillekeurigeMoves()));
             } 
             Console.WriteLine(groep);
+        }
+
+        private static void TestOpdracht11()
+        {
+            Game game = new Game();
+            game.Initialize();
         }
     }
 }

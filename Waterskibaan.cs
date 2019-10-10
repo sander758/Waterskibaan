@@ -18,7 +18,11 @@ namespace Waterskibaan
         public void VerplaatsKabel()
         {
             _kabel.VerschuifLijnen();
-            _lijnenVoorraad.LijnToevoegenAanRij(_kabel.VerwijderLijnVanKabel());
+            Lijn lijn = _kabel.VerwijderLijnVanKabel();
+            if (lijn != null)
+            {
+                _lijnenVoorraad.LijnToevoegenAanRij(lijn);
+            }
         }
 
         public void SporterStart(Sporter sporter)
