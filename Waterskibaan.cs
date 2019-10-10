@@ -23,6 +23,10 @@ namespace Waterskibaan
 
         public void SporterStart(Sporter sporter)
         {
+            if (sporter.Skies == null || sporter.Zwemvest == null)
+            {
+                throw new ArgumentException("Sporter heeft geen skies of zwemvest");
+            }
             Lijn lijn = _lijnenVoorraad.VerwijderEersteLijn();
             lijn.Sporter = sporter;
             Random r = new Random();

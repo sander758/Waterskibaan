@@ -9,8 +9,9 @@ namespace Waterskibaan
         {
             Console.WriteLine("Hello World!");
 
-            TestOpdracht2();
+//            TestOpdracht2();
 //            TestOpdracht3();
+            TestOpdracht8();
         }
 
         private static void TestOpdracht2()
@@ -53,6 +54,25 @@ namespace Waterskibaan
             Console.WriteLine(voorraad);
             voorraad.VerwijderEersteLijn();
             Console.WriteLine(voorraad);
+        }
+
+        private static void TestOpdracht8()
+        {
+            Waterskibaan baan = new Waterskibaan();
+            Sporter sporter = new Sporter(MoveCollection.GetWillekeurigeMoves());
+            sporter.Skies = new Skies();
+            sporter.Zwemvest = new Zwemvest();
+            try
+            {
+                baan.SporterStart(sporter);
+                baan.VerplaatsKabel();
+                baan.SporterStart(new Sporter(MoveCollection.GetWillekeurigeMoves()));
+                baan.VerplaatsKabel();
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
