@@ -43,6 +43,10 @@ namespace Waterskibaan
             {
                 Lijn lijn = _lijnen.Last.Value;
                 lijn.PositieOpDeKabel = 0;
+                if (lijn.Sporter != null)
+                {
+                    lijn.Sporter.AantalRondenNogTeGaan--;
+                }
                 _lijnen.RemoveLast();
                 _lijnen.AddFirst(lijn);
             }
@@ -53,9 +57,12 @@ namespace Waterskibaan
             Lijn lastLijn = _lijnen.Last.Value;
             if (lastLijn != null && lastLijn.PositieOpDeKabel == 9)
             {
-                // Verwijder de lijn uit de list
-                _lijnen.RemoveLast();
-                return lastLijn;
+                if (lastLijn.Sporter == null || lastLijn.Sporter.AantalRondenNogTeGaan == 1)
+                {
+                    // Verwijder de lijn uit de list als er geen sporter is of als de sporter in het laatste rondje zit
+                    _lijnen.RemoveLast();
+                    return lastLijn;
+                }
             }
             return null;
         }
