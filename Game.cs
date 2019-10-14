@@ -47,6 +47,7 @@ namespace Waterskibaan
             sporter.Skies = new Skies();
             sporter.Zwemvest = new Zwemvest();
             waterskibaan.SporterStart(sporter);
+            Console.WriteLine(waterskibaan);
             waterskibaan.VerplaatsKabel();
             Console.WriteLine(waterskibaan);
         }

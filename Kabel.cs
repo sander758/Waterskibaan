@@ -25,6 +25,10 @@ namespace Waterskibaan
                 lijn.PositieOpDeKabel = 0;
                 _lijnen.AddFirst(lijn);
             }
+            else
+            {
+                Console.WriteLine("Kon de lijn niet in gebruik nemen omdat de start positie niet leeg is");
+            }
         }
 
         public void VerschuifLijnen()
