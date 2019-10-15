@@ -7,6 +7,8 @@ namespace Waterskibaan
         private LijnenVoorraad _lijnenVoorraad = new LijnenVoorraad();
         public Kabel Kabel { get; }
 
+        private Random random = new Random();
+
         public Waterskibaan()
         {
             Kabel = new Kabel();
@@ -16,6 +18,8 @@ namespace Waterskibaan
             }
         }
 
+
+
         public void VerplaatsKabel()
         {
             Kabel.VerschuifLijnen();
@@ -23,6 +27,15 @@ namespace Waterskibaan
             if (lijn != null)
             {
                 _lijnenVoorraad.LijnToevoegenAanRij(lijn);
+            }
+
+            foreach (Lijn lijn1 in Kabel.Lijnen)
+            {
+                if (lijn1.Sporter != null && random.Next(4) == 0)
+                {
+                    int randomMove = random.Next(lijn1.Sporter.Moves.Count);
+                    lijn1.Sporter.HuidigeMove = lijn1.Sporter.Moves[randomMove];
+                }
             }
         }
 
