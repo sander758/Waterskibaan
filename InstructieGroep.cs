@@ -6,7 +6,7 @@ namespace Waterskibaan
     {
         public const int MAX_LENGTE_RIJ = 5;
 
-        protected override int GetLengte()
+        public override int GetLengte()
         {
             return MAX_LENGTE_RIJ;
         }

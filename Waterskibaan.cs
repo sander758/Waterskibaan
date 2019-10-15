@@ -5,10 +5,11 @@ namespace Waterskibaan
     public class Waterskibaan
     {
         private LijnenVoorraad _lijnenVoorraad = new LijnenVoorraad();
-        private Kabel _kabel = new Kabel();
+        public Kabel Kabel { get; }
 
         public Waterskibaan()
         {
+            Kabel = new Kabel();
             for (int i = 0; i < 15; i++)
             {
                 _lijnenVoorraad.LijnToevoegenAanRij(new Lijn());
@@ -17,8 +18,8 @@ namespace Waterskibaan
 
         public void VerplaatsKabel()
         {
-            _kabel.VerschuifLijnen();
-            Lijn lijn = _kabel.VerwijderLijnVanKabel();
+            Kabel.VerschuifLijnen();
+            Lijn lijn = Kabel.VerwijderLijnVanKabel();
             if (lijn != null)
             {
                 _lijnenVoorraad.LijnToevoegenAanRij(lijn);
@@ -35,12 +36,12 @@ namespace Waterskibaan
             lijn.Sporter = sporter;
             Random r = new Random();
             sporter.AantalRondenNogTeGaan = r.Next(1) + 1;
-            _kabel.NeemLijnInGebruik(lijn);
+            Kabel.NeemLijnInGebruik(lijn);
         }
 
         public override string ToString()
         {
-            return "De waterskibaan heeft " + _lijnenVoorraad + " op de kabel " + _kabel;
+            return "De waterskibaan heeft " + _lijnenVoorraad + " op de kabel " + Kabel;
         }
     }
 }

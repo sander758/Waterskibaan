@@ -26,7 +26,7 @@ namespace Waterskibaan
 
             for (int i = 0; i < aantal; i++)
             {
-                if (sporters.Peek() != null)
+                if (sporters.Count > 0 && sporters.Peek() != null)
                 {
                     verlatenSporters.Add(sporters.Dequeue());
                 }
@@ -35,7 +35,7 @@ namespace Waterskibaan
             return verlatenSporters;
         }
 
-        protected abstract int GetLengte();
+        public abstract int GetLengte();
 
         public override string ToString()
         {
