@@ -13,6 +13,7 @@ namespace Waterskibaan
         public WachtrijInstructie wachtrijInstructie { get; set; }
         public InstructieGroep instructieGroep { get; set; }
         public WachterijStarten wachterijStarten { get; set; }
+        public Logger Logger { get; set; }
 
         public delegate void NieuweBezoekerHandler(NieuweBezoekerArgs args);
         public event NieuweBezoekerHandler NieuweBezoeker;
@@ -32,8 +33,10 @@ namespace Waterskibaan
             wachtrijInstructie = new WachtrijInstructie();
             instructieGroep = new InstructieGroep();
             wachterijStarten = new WachterijStarten();
+            Logger = new Logger(waterskibaan.Kabel);
 
             NieuweBezoeker += wachtrijInstructie.OnNieuweBezoeker;
+            NieuweBezoeker += Logger.OnNieuweBezoeker;
             InstructieAfgelopen += OnInstructieAfgelopen;
             VerplaatsKabel += waterskibaan.VerplaatsKabel;
             VerplaatsKabel += OnVerplaatsKabel;
