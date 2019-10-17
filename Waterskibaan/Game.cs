@@ -44,7 +44,6 @@ namespace Waterskibaan
             gameTimer.Dispose();
 
             Console.WriteLine("Terminating the application...");
-
         }
 
         private void SetTimer()
