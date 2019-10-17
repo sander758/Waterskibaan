@@ -6,5 +6,10 @@
         {
             return 10;
         }
+
+        public override string ToString()
+        {
+            return "Een Been";
+        }
     }
 }

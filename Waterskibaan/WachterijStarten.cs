@@ -4,7 +4,7 @@ namespace Waterskibaan
 {
     public class WachterijStarten : Wachtrij
     {
-        public const int MAX_LENGTE_RIJ = 20;
+        public const int MAX_LENGTE_RIJ = 50;
 
         public override int GetLengte()
         {

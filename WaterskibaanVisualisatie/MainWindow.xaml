@@ -7,8 +7,108 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="LabelContent" Margin="10,10,148,0" VerticalAlignment="Top" x:Name="TestLabel"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,41,0,0"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="357*"/>
+            <ColumnDefinition Width="278*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+        <Rectangle x:Name="Position1Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="85,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Label x:Name="InstructieWachtrijLabel" Content="Wachtrij Instructie" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="305"/>
+        <Rectangle x:Name="Position2Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="165,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Rectangle x:Name="Position0Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="49,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Rectangle x:Name="Position9Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="49,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Rectangle x:Name="Position8Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="49,291,0,0" Stroke="Black" VerticalAlignment="Top" Width="16" RenderTransformOrigin="0.938,5.562"/>
+        <Rectangle x:Name="Position7Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="85,356,0,0" Stroke="Black" VerticalAlignment="Top" Width="16" RenderTransformOrigin="3.75,4.5"/>
+        <Rectangle x:Name="Position6Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="165,356,0,0" Stroke="Black" VerticalAlignment="Top" Width="16" RenderTransformOrigin="8.688,4"/>
+        <Rectangle x:Name="Position5Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="200,291,0,0" Stroke="Black" VerticalAlignment="Top" Width="16" RenderTransformOrigin="7.75,-0.812"/>
+        <Rectangle x:Name="Position4Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="200,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Rectangle x:Name="Position3Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="200,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
+        <Label x:Name="Position0Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="49,116,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position1Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="85,52,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position2Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="165,52,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position3Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="200,116,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position4Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="200,206,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position5Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="200,307,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.308" Width="60" Height="45"/>
+        <Label x:Name="StartWachtrijLabel" Content="Wachtrij Starten" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,223,0,0" Height="26" Width="316"/>
+        <Label x:Name="Position9Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="49,206,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="InstructieGroepLabel" Content="Instructie Groep" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,146,0,0" Height="26" Width="316"/>
+        <Label x:Name="Position8Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="49,307,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.184,0.192" Width="60" Height="45"/>
+        <Label x:Name="Position7Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="85,372,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Label x:Name="Position6Label" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="165,372,0,0" VerticalAlignment="Top" Width="60" Height="45"/>
+        <Grid x:Name="InstructieWachtrij" HorizontalAlignment="Left" Height="108" Margin="5,26,0,0" VerticalAlignment="Top" Width="324">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid x:Name="InstructieGroep" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="90" Margin="5,172,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid x:Name="StartWachtrij" HorizontalAlignment="Left" Height="108" Margin="5,249,0,0" VerticalAlignment="Top" Width="324">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <Label x:Name="LijnenVoorraadLabel" Content="Lijnen voorraad" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="258"/>
     </Grid>
 </Window>

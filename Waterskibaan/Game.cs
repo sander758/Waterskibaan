@@ -51,7 +51,7 @@ namespace Waterskibaan
 
         private void SetTimer()
         {
-            gameTimer = new Timer(1000);
+            gameTimer = new Timer(100);
             // Hook up the Elapsed event for the timer. 
             gameTimer.Elapsed += Loop;
             gameTimer.AutoReset = true;

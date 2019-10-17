@@ -4,21 +4,20 @@ namespace Waterskibaan
 {
     public class Waterskibaan
     {
-        private LijnenVoorraad _lijnenVoorraad = new LijnenVoorraad();
+        public LijnenVoorraad LijnenVoorraad { get; }
         public Kabel Kabel { get; }
 
         private Random random = new Random();
 
         public Waterskibaan()
         {
+            LijnenVoorraad = new LijnenVoorraad();
             Kabel = new Kabel();
-            for (int i = 0; i < 15; i++)
+            for (int i = 1; i <= 15; i++)
             {
-                _lijnenVoorraad.LijnToevoegenAanRij(new Lijn());
+                LijnenVoorraad.LijnToevoegenAanRij(new Lijn(i));
             }
         }
-
-
 
         public void VerplaatsKabel()
         {
@@ -26,15 +25,29 @@ namespace Waterskibaan
             Lijn lijn = Kabel.VerwijderLijnVanKabel();
             if (lijn != null)
             {
-                _lijnenVoorraad.LijnToevoegenAanRij(lijn);
+                LijnenVoorraad.LijnToevoegenAanRij(lijn);
             }
 
-            foreach (Lijn lijn1 in Kabel.Lijnen)
+            foreach (Lijn sporterLijn in Kabel.Lijnen)
             {
-                if (lijn1.Sporter != null && random.Next(4) == 0)
+                if (sporterLijn.Sporter != null)
                 {
-                    int randomMove = random.Next(lijn1.Sporter.Moves.Count);
-                    lijn1.Sporter.HuidigeMove = lijn1.Sporter.Moves[randomMove];
+                    if (sporterLijn.Sporter.HuidigeMove != null)
+                    {
+                        sporterLijn.Sporter.HuidigeMove = null;
+                    }
+
+                    if (random.Next(4) == 0 && sporterLijn.Sporter.Moves.Count > 0)
+                    {
+                        int randomMove = random.Next(sporterLijn.Sporter.Moves.Count);
+                        IMove move = sporterLijn.Sporter.Moves[randomMove];
+                        sporterLijn.Sporter.HuidigeMove = move;
+                        if (random.Next(4) != 0)
+                        {
+                            sporterLijn.Sporter.BehaaldePunten += move.Move();
+                        }
+                        sporterLijn.Sporter.Moves.RemoveAt(randomMove);
+                    }
                 }
             }
         }
@@ -45,16 +58,16 @@ namespace Waterskibaan
             {
                 throw new ArgumentException("Sporter heeft geen skies of zwemvest");
             }
-            Lijn lijn = _lijnenVoorraad.VerwijderEersteLijn();
+            Lijn lijn = LijnenVoorraad.VerwijderEersteLijn();
             lijn.Sporter = sporter;
             Random r = new Random();
-            sporter.AantalRondenNogTeGaan = r.Next(1) + 1;
+            sporter.AantalRondenNogTeGaan = r.Next(2) + 1;
             Kabel.NeemLijnInGebruik(lijn);
         }
 
         public override string ToString()
         {
-            return "De waterskibaan heeft " + _lijnenVoorraad + " op de kabel " + Kabel;
+            return "De waterskibaan heeft " + LijnenVoorraad + " op de kabel " + Kabel;
         }
     }
 }

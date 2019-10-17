@@ -6,5 +6,10 @@
         {
             return 12;
         }
+
+        public override string ToString()
+        {
+            return "Omdraaien";
+        }
     }
 }

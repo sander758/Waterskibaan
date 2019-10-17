@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Waterskibaan
@@ -16,7 +17,8 @@ namespace Waterskibaan
         public Sporter(List<IMove> moves)
         {
             Moves = moves;
-            KledingKleur = Color.Aqua;
+            Random r = new Random();
+            KledingKleur = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
         }
     }
 }

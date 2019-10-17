@@ -20,18 +20,18 @@ namespace Waterskibaan
         {
             Kabel kabel = new Kabel();
             Console.WriteLine("Kabel: " + kabel);
-            kabel.NeemLijnInGebruik(new Lijn());
+            kabel.NeemLijnInGebruik(new Lijn(1));
             kabel.VerschuifLijnen();
             Console.WriteLine("Kabel: " + kabel);
-            kabel.NeemLijnInGebruik(new Lijn());
+            kabel.NeemLijnInGebruik(new Lijn(2));
             Console.WriteLine("Kabel: " + kabel);
             kabel.VerschuifLijnen();
-            kabel.NeemLijnInGebruik(new Lijn());
+            kabel.NeemLijnInGebruik(new Lijn(3));
             Console.WriteLine("Kabel: " + kabel);
             kabel.VerschuifLijnen();
             kabel.VerschuifLijnen();
             kabel.VerschuifLijnen();
-            kabel.NeemLijnInGebruik(new Lijn());
+            kabel.NeemLijnInGebruik(new Lijn(4));
             Console.WriteLine("Kabel: " + kabel);
             kabel.VerschuifLijnen();
             kabel.VerschuifLijnen();
@@ -48,11 +48,11 @@ namespace Waterskibaan
         private static void TestOpdracht3()
         {
             LijnenVoorraad voorraad = new LijnenVoorraad();
-            voorraad.LijnToevoegenAanRij(new Lijn());
+            voorraad.LijnToevoegenAanRij(new Lijn(1));
             Console.WriteLine(voorraad);
-            voorraad.LijnToevoegenAanRij(new Lijn());
+            voorraad.LijnToevoegenAanRij(new Lijn(2));
             Console.WriteLine(voorraad);
-            voorraad.LijnToevoegenAanRij(new Lijn());
+            voorraad.LijnToevoegenAanRij(new Lijn(3));
             Console.WriteLine(voorraad);
             voorraad.VerwijderEersteLijn();
             Console.WriteLine(voorraad);
