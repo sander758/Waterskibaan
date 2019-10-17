@@ -9,11 +9,19 @@ namespace Waterskibaan
         {
             Console.WriteLine("Hello World!");
 
-//            TestOpdracht2();
-//            TestOpdracht3();
-//            TestOpdracht8();
-//            TestOpdracht10();
-            TestOpdracht11();
+            //            TestOpdracht2();
+            //            TestOpdracht3();
+            //            TestOpdracht8();
+            //            TestOpdracht10();
+            //            TestOpdracht11();
+
+            Logger logger = new Logger(new Kabel());
+            Color red = Color.Red;
+
+            Color color = Color.FromArgb(255, 240, 150, 150);
+
+            Console.WriteLine(logger.ColorsAreClose(red, color));
+            Console.ReadKey();
         }
 
         private static void TestOpdracht2()

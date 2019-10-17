@@ -7,6 +7,7 @@ namespace Waterskibaan
     public class Sporter
     {
         public int AantalRondenNogTeGaan { get; set; }
+        public int AfgelegdeRondjes { get; set; }
         public Zwemvest Zwemvest { get; set; }
         public Skies Skies { get; set; }
         public Color KledingKleur { get; set; }

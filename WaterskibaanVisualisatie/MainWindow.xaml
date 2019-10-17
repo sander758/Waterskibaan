@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaterskibaanVisualisatie"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="485" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="357*"/>
             <ColumnDefinition Width="278*"/>
             <ColumnDefinition Width="157*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
-        <Label Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+        <Label x:Name="AantalBezoekers" Content="Aantal bezoekers" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157"/>
+        <Label x:Name="HoogsteScore" Content="Hoogste score" Grid.Column="2" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Height="26" Width="157"/>
         <Rectangle x:Name="Position1Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="85,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
         <Label x:Name="InstructieWachtrijLabel" Content="Wachtrij Instructie" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="305"/>
         <Rectangle x:Name="Position2Rectangle" Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="16" Margin="165,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="16"/>
@@ -110,5 +110,27 @@
             </Grid.RowDefinitions>
         </Grid>
         <Label x:Name="LijnenVoorraadLabel" Content="Lijnen voorraad" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="258"/>
+        <Label x:Name="RodeKleding" Content="Rode kleding" Grid.Column="2" HorizontalAlignment="Left" Margin="0,52,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label x:Name="TotaleRondjes" Content="Totale rondjes" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="0,78,0,0" Width="157"/>
+        <Label Content="Lichtste kleuren kleding:" Grid.Column="2" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top" Width="157"/>
+        <Grid x:Name="LichtseKleding" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="157" Grid.Column="2" Margin="0,130,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Label x:Name="SpringMoves" Content="Spring:" Grid.Column="2" HorizontalAlignment="Left" Margin="0,330,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label x:Name="OmdraaienMoves" Content="Omdraaien:" Grid.Column="2" HorizontalAlignment="Left" Margin="0,356,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label x:Name="EenBeenMoves" Content="Een been" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="0,408,0,0" Width="157"/>
+        <Label x:Name="EenHandMoves" Content="Een hand:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="0,382,0,0" Width="157"/>
+        <Label Content="Unieke moves" Grid.Column="2" HorizontalAlignment="Left" Margin="0,304,0,0" VerticalAlignment="Top" Width="157"/>
     </Grid>
 </Window>

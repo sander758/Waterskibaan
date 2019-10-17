@@ -40,6 +40,9 @@ namespace Waterskibaan
                 if (lijn.PositieOpDeKabel == 10)
                 {
                     moveToStart = true;
+                } else if (lijn.PositieOpDeKabel == 9)
+                {
+                    lijn.Sporter.AfgelegdeRondjes++;
                 }
             }
 

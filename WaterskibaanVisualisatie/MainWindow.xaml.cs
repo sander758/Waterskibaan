@@ -39,6 +39,7 @@ namespace WaterskibaanVisualisatie
 
             UpdateLijnen();
             UpdateWachtrijen();
+            UpdateStats();
         }
 
         private void UpdateLijnen()
@@ -258,6 +259,51 @@ namespace WaterskibaanVisualisatie
                     }
                 }
             });
+        }
+
+        private void UpdateStats()
+        {
+            AantalBezoekers.Dispatcher?.Invoke(() =>
+            {
+                AantalBezoekers.Content = "Aantal bezoekers: " + game.Logger.AantalBezoekers();
+            });
+            HoogsteScore.Dispatcher?.Invoke(() =>
+            {
+                HoogsteScore.Content = "Hoogste score: " + game.Logger.HoogsteScore();
+            });
+            RodeKleding.Dispatcher?.Invoke(() =>
+            {
+                RodeKleding.Content = "Rode kleding: " + game.Logger.RodeKleding();
+            });
+            TotaleRondjes.Dispatcher?.Invoke(() =>
+            {
+                TotaleRondjes.Content = "Totale rondjes: " + game.Logger.TotaalAantalRondjes();
+            });
+
+            Grid grid = LichtseKleding;
+            grid.Dispatcher?.Invoke(() =>
+            {
+                grid.Children.Clear();
+
+                int count = 0;
+                foreach (Sporter sporter in game.Logger.LichtsteKleding())
+                {
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.Fill = new SolidColorBrush(Color.FromRgb(sporter.KledingKleur.R, sporter.KledingKleur.G, sporter.KledingKleur.B));
+                    Grid.SetColumn(rectangle, 0);
+                    Grid.SetRow(rectangle, count);
+                    grid.Children.Add(rectangle);
+
+                    count++;
+                }
+            });
+
+            int[] uniekeMoves = game.Logger.UniekeMoves();
+            SpringMoves.Dispatcher?.Invoke(() => { SpringMoves.Content = "Spring: " + uniekeMoves[0]; });
+            OmdraaienMoves.Dispatcher?.Invoke(() => { OmdraaienMoves.Content = "Omdraaien: " + uniekeMoves[1]; });
+            EenHandMoves.Dispatcher?.Invoke(() => { EenHandMoves.Content = "Een hand: " + uniekeMoves[2]; });
+            EenBeenMoves.Dispatcher?.Invoke(() => { EenBeenMoves.Content = "Een been: " + uniekeMoves[3]; });
+
         }
     }
 }
