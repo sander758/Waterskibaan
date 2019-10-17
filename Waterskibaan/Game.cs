@@ -9,10 +9,10 @@ namespace Waterskibaan
     {
         private Timer gameTimer;
 
-        private Waterskibaan waterskibaan;
-        private WachtrijInstructie wachtrijInstructie;
-        private InstructieGroep instructieGroep;
-        private WachterijStarten wachterijStarten;
+        public Waterskibaan waterskibaan { get; set; }
+        public WachtrijInstructie wachtrijInstructie { get; set; }
+        public InstructieGroep instructieGroep { get; set; }
+        public WachterijStarten wachterijStarten { get; set; }
 
         public delegate void NieuweBezoekerHandler(NieuweBezoekerArgs args);
         public event NieuweBezoekerHandler NieuweBezoeker;
@@ -37,13 +37,13 @@ namespace Waterskibaan
 
             SetTimer();
 
-            Console.WriteLine("\nPress the Enter key to exit the application...\n");
-            Console.WriteLine("The application started at {0:HH:mm:ss.fff}", DateTime.Now);
-            Console.ReadLine();
-            gameTimer.Stop();
-            gameTimer.Dispose();
-
-            Console.WriteLine("Terminating the application...");
+//            Console.WriteLine("\nPress the Enter key to exit the application...\n");
+//            Console.WriteLine("The application started at {0:HH:mm:ss.fff}", DateTime.Now);
+//            Console.ReadLine();
+//            gameTimer.Stop();
+//            gameTimer.Dispose();
+//
+//            Console.WriteLine("Terminating the application...");
         }
 
         private void SetTimer()

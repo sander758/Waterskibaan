@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Waterskibaan;
 
 namespace WaterskibaanVisualisatie
 {
@@ -20,9 +21,25 @@ namespace WaterskibaanVisualisatie
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Game game;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            game = new Game();
+            game.Initialize();
+
+            game.NieuweBezoeker += OnNieuweBezoeker;
+        }
+
+        public void OnNieuweBezoeker(NieuweBezoekerArgs args)
+        {
+            Console.WriteLine("Nieuwe bezoeker in instructie wachtrij");
+            TestLabel.Dispatcher.Invoke(() =>
+            {
+                TestLabel.Content = "Aantal mensen in instructie wachtrij " + game.wachtrijInstructie.AantalInWachtrij();
+            });
         }
     }
 }

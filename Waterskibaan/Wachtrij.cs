@@ -35,6 +35,11 @@ namespace Waterskibaan
             return verlatenSporters;
         }
 
+        public int AantalInWachtrij()
+        {
+            return sporters.Count;
+        }
+
         public abstract int GetLengte();
 
         public override string ToString()
