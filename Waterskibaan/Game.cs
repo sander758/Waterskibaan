@@ -23,6 +23,9 @@ namespace Waterskibaan
         public delegate void VerplaatsKabelHandler();
         public event VerplaatsKabelHandler VerplaatsKabel;
 
+        public delegate void LoopUpdateHandler();
+        public event LoopUpdateHandler LoopUpdate;
+
         public void Initialize()
         {
             waterskibaan = new Waterskibaan();
@@ -88,6 +91,8 @@ namespace Waterskibaan
             Console.WriteLine(waterskibaan);
 
             loopCount++;
+
+            LoopUpdate?.Invoke();
         }
 
         public void OnInstructieAfgelopen(InstructieAfgelopenArgs args)

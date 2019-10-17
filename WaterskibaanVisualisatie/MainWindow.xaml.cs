@@ -30,13 +30,14 @@ namespace WaterskibaanVisualisatie
             game = new Game();
             game.Initialize();
 
-            game.NieuweBezoeker += OnNieuweBezoeker;
+            game.LoopUpdate += LoopUpdate;
+
         }
 
-        public void OnNieuweBezoeker(NieuweBezoekerArgs args)
+        public void LoopUpdate()
         {
-            Console.WriteLine("Nieuwe bezoeker in instructie wachtrij");
-            TestLabel.Dispatcher.Invoke(() =>
+            Console.WriteLine("Update UI");
+            TestLabel.Dispatcher?.Invoke(() =>
             {
                 TestLabel.Content = "Aantal mensen in instructie wachtrij " + game.wachtrijInstructie.AantalInWachtrij();
             });
